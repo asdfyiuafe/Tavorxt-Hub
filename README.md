@@ -2724,7 +2724,7 @@ Tabs.Main:AddButton({
         Title = "Tavorxt Hub Discord Server",
         Description = "Very important",
         Callback = function()
-        setclipboard("Discord de vocês")
+        setclipboard("discord.gg/centralaccounts")
         end
         })
 local Farming = Tabs.Main:AddSection("Farming")
