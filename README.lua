@@ -365,7 +365,7 @@ Toggle:OnChanged(function() print(Options.AutoFarm.Value) end)
 
 
 
-local AutoChestToggle = Tabs.Farm:AddToggle("AutoChestFarm", { Title = "Auto Chest Farm" })
+local AutoChestToggle = Tabs.Main:AddToggle("AutoChestFarm", { Title = "Auto Chest Farm" })
 
 function AutoChestFarm()
     while Options.AutoChestFarm.Value do
