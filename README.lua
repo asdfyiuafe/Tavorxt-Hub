@@ -12,7 +12,7 @@ local support = {
     ["Electron"] = false
 }
 
-if exploit then
+if type(exploit) == "function" then
     local executorName = exploit()
     if support[executorName] ~= nil then
         print("Executor " .. executorName .. " é suportado: " .. tostring(support[executorName]))
@@ -22,8 +22,6 @@ if exploit then
 else
     print("Não foi possível identificar o executor.")
 end
-
-}
 
 if support[exploit()]  then
     print("Correct Executor Let's Run uwu")
