@@ -20,8 +20,9 @@ if type(exploit) == "function" then
         print("Executor não reconhecido.")
     end
 else
-    print("Não foi possível identificar o executor.")
+    print("Não foi possível identificar o executor. O exploit pode não fornecer essa função.")
 end
+
 
 if support[exploit()]  then
     print("Correct Executor Let's Run uwu")
