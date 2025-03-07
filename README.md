@@ -1,4 +1,5 @@
 local exploit = getexecutorname or identifyexecutor
+
 local support = {
     ["Fluxus"] = true,
     ["Trigon"] = false,
@@ -8,7 +9,20 @@ local support = {
     ["Hydrogen"] = true,
     ["alysse"] = false,
     ["ArceusX"] = true,
-    ["Electron"] = false,
+    ["Electron"] = false
+}
+
+if exploit then
+    local executorName = exploit()
+    if support[executorName] ~= nil then
+        print("Executor " .. executorName .. " é suportado: " .. tostring(support[executorName]))
+    else
+        print("Executor não reconhecido.")
+    end
+else
+    print("Não foi possível identificar o executor.")
+end
+
 }
 
 if support[exploit()]  then
