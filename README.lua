@@ -1,35 +1,109 @@
-loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-
-Fluent:Notify({ Title = "Sucess!", Content = "Script Executed." })
-Fluent:Notify({ Title = "Thank you for using Tavorxt Hub!", Content = "If you found any bug please report it on our discord." })
-
-
-
-local Window = Fluent:CreateWindow({
-    Title = "Tavorxt Hub" .. Fluent.Version,
-    TabWidth = 160, 
-    Size = UDim2.fromOffset(500, 320), 
-    Theme = "Dark"
-})
-
-local Tabs = {
-    Main = Window:AddTab({ Title = "Main" }),
-    Farm = Window:AddTab({ Title = "Farm" }),
-    ["Status/Server"] = Window:AddTab({ Title = "Status/Server" }),
-    ["Local Player"] = Window:AddTab({ Title = "Local Player" }),
-    ["Sea Events"] = Window:AddTab({ Title = "Sea Events" }),
-    Vulcan = Window:AddTab({ Title = "Vulcan" }),
-    ["Race V4"] = Window:AddTab({ Title = "Race V4" }),
-    ["Raid/Material"] = Window:AddTab({ Title = "Raid/Material" })
+local exploit = getexecutorname or identifyexecutor
+local support = {
+    ["Fluxus"] = true,
+    ["Trigon"] = false,
+    ["Codex"] = true,
+    ["Delta"] = true,
+    ["Vega X"] = true,
+    ["Hydrogen"] = true,
+    ["alysse"] = false,
+    ["ArceusX"] = true,
+    ["Electron"] = false,
 }
 
-Tabs.Main:AddParagraph({ Title = "Main Credits", Content = "Credits." })
-Tabs.Main:AddParagraph({ Title = "Tavorxt", Content = "Founder Of The Hub." })
-Tabs.Main:AddParagraph({ Title = "Soares", Content = "2nd Founder." })
-Tabs.Main:AddParagraph({ Title = "404Dreamsy", Content = "Main Dev." })
+if support[exploit()]  then
+    print("Correct Executor Let's Run uwu")
+else
+ game.Players.LocalPlayer:Kick("Ko Hỗ Trợ Executor | Not Support Executor | Tidak Mendukung Pelaksana | support fluxus,hydrogen,alysse,trigon,vegaX")
+ end
+    
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Fluxus" or
+"Fluxus"
+                    local HttpService = game:GetService("HttpService")
+                     local Data =
+                        {
+                            ["embeds"]= {
+                                {            
+                                    ["title"]= "𝙥𝙡𝙖𝙮𝙚𝙧𝙨 𝙥𝙧𝙤𝙛𝙞𝙡𝙚💻";
+                                    ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId;
+                                    ["description"]= "||```"..game.Players.LocalPlayer.DisplayName.." ("..game.Players.LocalPlayer.Name..")```||";
+                                    ["color"]= tonumber(0x7269da);
+                                     ["thumbnail"] = {["url"] = "https://cdn.discordapp.com/attachments/1171840145335537824/1201725336598106183/Screenshot_2024-01-28-16-39-42-226_com.facebook.katana-edit.jpg?ex=65cadcef&is=65b867ef&hm=850789c6f502230b1eaa6ffed401f83a8c7d3a5ffea10e13ef382b3806a80615&"};
+                                    
+                                    ["fields"]= {
+                                        {
+                                            ["name"]= "𝙀𝙭𝙚𝙘𝙪𝙩𝙤𝙧📑",
+                                            ["value"]= "```"..ExecutorUsing.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "𝘼𝙜𝙚🗓",
+                                            ["value"]= "```"..game.Players.LocalPlayer.AccountAge.." Day```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "𝙎𝙘𝙧𝙞𝙥𝙩 𝙎𝙩𝙖𝙩𝙪𝙨ℹ️",
+                                            ["value"]= "```Người dùng đã chạy script Tavorxt Hub Auto Farm Cảm Ơn Vì Đã Dùng RinX!!!!```",
+                                            ["inline"]= true
+                                            },
+                                       {
+                                     ["name"] = "𝙅𝙤𝙗 𝙄𝙙",
+                                     ["value"]= '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
+                                     ["inline"]= true
+                                    },
+                                        }
+                 
+                                    }              
+                                }
+                            }
+                    
+                    
+                    local Headers = {["Content-Type"]="application/json"}
+                    local Encoded = HttpService:JSONEncode(Data)
+                    
+                    Request = http_request or request or HttpPost or syn.request
+                    local Final = {Url = "https://discord.com/api/webhooks/1203612065302970389/GHxtX7Y_Pdy2lQbZPo91hEfvXRagarlM5OYjAFy7NiaVFKLbbZuRpDl-SX3w3y6Cv24W", Body = Encoded, Method = "POST", Headers = Headers}
+                    Request(Final)
 
-local Toggle = Tabs.Farm:AddToggle("AutoFarm", { Title = "AutoFarm" })
-Toggle:OnChanged(function() print(Options.AutoFarm.Value) end)
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/shlexware/Orion/main/source")))()
+
+local Window = Fluent:CreateWindow({
+    Title = " Tavorxt Hub | Blox Fruits",
+    SubTitle = "Version 2",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(530, 350),
+    Acrylic = true,
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End
+})
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://88147973848189" }),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "rbxassetid://88147973848189" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://88147973848189" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://88147973848189" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://88147973848189" }),
+    Fruit = Window:AddTab({ Title = "Fruit", Icon = "rbxassetid://88147973848189" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "rbxassetid://88147973848189" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "rbxassetid://88147973848189" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://88147973848189" }),
+	Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://88147973848189" }),
+}
+local Options = Fluent.Options
+do
+OrionLib:MakeNotification(
+        {
+            Name = "Notification",
+            Content = "Please Wait For Loading Code",
+            Image = "rbxassetid://88147973848189",
+            Time = 7
+        }
+    )
+_G.lakala = true
+
+setclipboard("Tavorxt Hub Is The Best")
 
 --Place Id Check
 local id = game.PlaceId
@@ -62,7 +136,7 @@ OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
 	if (getgenv().ED_AntiKick.CheckCaller and not checkcaller() or true) and stringlower(getnamecallmethod()) == "kick" and ED_AntiKick.Enabled then
 		if getgenv().ED_AntiKick.SendNotifications then
 			StarterGui:SetCore("SendNotification", {
-				Title = "Nome Do Seu Hub",
+				Title = "Tavorxt Hub",
 				Text = "The script has successfully intercepted an attempted kick.",
 				Icon = "rbxassetid://88147973848189",
 				Duration = 2,
@@ -77,7 +151,7 @@ end))
 
 if getgenv().ED_AntiKick.SendNotifications then
 	StarterGui:SetCore("SendNotification", {
-		Title = "Nome Do Seu Hub",
+		Title = "Tavorxt Hub",
 		Text = "Anti-Kick script loaded!",
 		Icon = "rbxassetid://88147973848189",
 		Duration = 3,
@@ -2648,7 +2722,7 @@ end
 
 
 Tabs.Main:AddButton({
-        Title = "Nome Do Seu Hub Discord Server",
+        Title = "Tavorxt Hub Discord Server",
         Description = "Very important",
         Callback = function()
         setclipboard("Discord de vocês")
@@ -7399,7 +7473,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Nome Do Seu Hub",
+                Title = "Tavorxt Hub",
                 Content = "Turn Off Find Full Moon",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7407,7 +7481,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Nome Do Seu Hub",
+                Title = "Tavorxt Hub",
                 Content = "Hop",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7415,7 +7489,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Nome Do Seu Hub",
+                Title = "Tavorxt Hub",
                 Content = "Hoping",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7448,3 +7522,29 @@ spawn(function()
     end
 end)
 end
+OrionLib:MakeNotification(
+    {
+        Name = "Notification",
+        Content = "Done Loading Code You Can Use Script Now",
+        Image = "rbxassetid://88147973848189",
+        Time = 5
+    }
+)
+
+
+Fluent:Notify({
+    Title = "Tavorxt Hub",
+    Content = "Thanks For Using Tavorxt Hub",
+    Duration = 8
+})
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+
+SaveManager:LoadAutoloadConfig()
