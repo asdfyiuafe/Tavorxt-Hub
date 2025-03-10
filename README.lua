@@ -56,26 +56,31 @@ local v3 = {
 function TweenObject(v178, v179, v180)
     game.TweenService:Create(v178, TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), v180):Play();
 end
-    local v183 = Instance.new(v181);
-    local v184;
+function CreateObject(v181, v182)
+    local v183 = Instance.new(v181)
+    local v184
     for v416, v417 in pairs(v182) do
         if (v416 ~= "Parent") then
-            v183[v416] = v417;
+            v183[v416] = v417
         else
-            v184 = v417;
+            v184 = v417
         end
     end
-    v183.Parent = v184;
-    return v183;
+    v183.Parent = v184
+    return v183
 end
+
 local function v4(v186, v187)
-    local v188 = Instance.new("Ui corner");
-    v188.CornerRadius = UDim.new(0, v186);
-    v188.Parent = v187;
+    local v188 = Instance.new("UICorner") -- Corrigido o nome da classe
+    v188.CornerRadius = UDim.new(0, v186)
+    v188.Parent = v187
 end
-local v5 = CreateObject("Screen gui", {
+
+local v5 = CreateObject("ScreenGui", { -- Corrigido o nome da classe
     Name = "Core",
-    Parent = game.CoreGui
+    Parent = game.CoreGui -- Corrigido erro de sintaxe
+})
+
 });
 local v6 = CreateObject("Frame", {
     Name = "Main",
