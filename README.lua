@@ -56,7 +56,6 @@ local v3 = {
 function TweenObject(v178, v179, v180)
     game.TweenService:Create(v178, TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), v180):Play();
 end
-function CreateObject(v181, v182)
     local v183 = Instance.new(v181);
     local v184;
     for v416, v417 in pairs(v182) do
