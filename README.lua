@@ -1,22 +1,11 @@
-shared.LoaderTitle = "Tavorxt Hub";
+shared.LoaderTitle = "Tavorxt Hub"
 shared.LoaderKeyFrames = {
-    [1] = {
-        1,
-        10
-    },
-    [2] = {
-        2,
-        30
-    },
-    [3] = {
-        3,
-        60
-    },
-    [4] = {
-        2,
-        100
-    }
-};
+    [1] = {1, 10},
+    [2] = {2, 30},
+    [3] = {3, 60},
+    [4] = {2, 100}
+}
+
 local v2 = {
     LoaderData = {
         Name = shared.LoaderTitle or "A Loader",
@@ -29,38 +18,33 @@ local v2 = {
         }
     },
     Keyframes = shared.LoaderKeyFrames or {
-        [1] = {
-            1,
-            10
-        },
-        [2] = {
-            2,
-            30
-        },
-        [3] = {
-            3,
-            60
-        },
-        [4] = {
-            2,
-            100
-        }
+        [1] = {1, 10},
+        [2] = {2, 30},
+        [3] = {3, 60},
+        [4] = {2, 100}
     }
-};
+}
+
 local v3 = {
     [1] = "",
     [2] = "",
     [3] = "",
     [4] = ""
-};
+}
+
 function TweenObject(v178, v179, v180)
-    game.TweenService:Create(v178, TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), v180):Play();
+    game:GetService("TweenService"):Create(
+        v178, 
+        TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), 
+        v180
+    ):Play()
 end
+
 function CreateObject(v181, v182)
     local v183 = Instance.new(v181)
     local v184
     for v416, v417 in pairs(v182) do
-        if (v416 ~= "Parent") then
+        if v416 ~= "Parent" then
             v183[v416] = v417
         else
             v184 = v417
@@ -71,15 +55,16 @@ function CreateObject(v181, v182)
 end
 
 local function v4(v186, v187)
-    local v188 = Instance.new("UICorner") -- Corrigido o nome da classe
+    local v188 = Instance.new("UICorner")
     v188.CornerRadius = UDim.new(0, v186)
     v188.Parent = v187
 end
 
-local v5 = CreateObject("ScreenGui", { -- Corrigido o nome da classe
+local v5 = CreateObject("ScreenGui", {
     Name = "Core",
-    Parent = game.CoreGui -- Corrigido erro de sintaxe
+    Parent = game.CoreGui
 })
+
 
 });
 local v6 = CreateObject("Frame", {
