@@ -32,38 +32,58 @@ local v3 = {
     [4] = ""
 }
 
-function TweenObject(v178, v179, v180)
-    game:GetService("TweenService"):Create(
-        v178, 
-        TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), 
-        v180
-    ):Play()
-end
+-- Função para criar objetos com propriedades definidas
+function CreateObject(className, properties)
+    local object = Instance.new(className) -- Certifique-se de que className é válido
+    if not object then
+        warn("Erro: '" .. tostring(className) .. "' não é uma classe válida.")
+        return nil
+    end
 
-function CreateObject(v181, v182)
-    local v183 = Instance.new(v181)
-    local v184
-    for v416, v417 in pairs(v182) do
-        if v416 ~= "Parent" then
-            v183[v416] = v417
+    local parent
+    for property, value in pairs(properties) do
+        if property ~= "Parent" then
+            object[property] = value
         else
-            v184 = v417
+            parent = value
         end
     end
-    v183.Parent = v184
-    return v183
+    object.Parent = parent
+    return object
 end
 
-local function v4(v186, v187)
-    local v188 = Instance.new("UICorner")
-    v188.CornerRadius = UDim.new(0, v186)
-    v188.Parent = v187
+-- Função para aplicar um efeito de Tween em um objeto
+function TweenObject(target, time, properties)
+    local tweenService = game:GetService("TweenService")
+    if not tweenService then
+        warn("Erro: TweenService não pôde ser obtido.")
+        return
+    end
+
+    local tween = tweenService:Create(target, TweenInfo.new(time, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), properties)
+    if tween then
+        tween:Play()
+    else
+        warn("Erro ao criar tween para o objeto.")
+    end
 end
 
-local v5 = CreateObject("ScreenGui", {
+-- Função para adicionar UICorner a um objeto
+local function AddUICorner(radius, parent)
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, radius)
+    corner.Parent = parent
+end
+
+-- Criando a ScreenGui corretamente
+local screenGui = CreateObject("ScreenGui", {
     Name = "Core",
-    Parent = game.CoreGui
+    Parent = game:GetService("CoreGui") -- Usando GetService para garantir que existe
 })
+
+if not screenGui then
+    warn("Erro ao criar ScreenGui.")
+end
 
 
 });
